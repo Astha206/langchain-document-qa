@@ -1,0 +1,19 @@
+Machine Learning Basics
+
+Machine learning is a branch of artificial intelligence that allows computers to learn patterns from data and make predictions or decisions without being explicitly programmed for every task.
+
+There are three common types of machine learning: supervised learning, unsupervised learning, and reinforcement learning.
+
+Supervised learning uses labeled data, where each training example has a known output. Common supervised learning tasks include classification and regression.
+
+Unsupervised learning works with unlabeled data and attempts to discover hidden patterns or structures. Clustering is a common example of unsupervised learning.
+
+Reinforcement learning involves an agent interacting with an environment. The agent receives rewards or penalties based on its actions and learns a strategy for making better decisions.
+
+A machine learning workflow commonly includes collecting data, preprocessing the data, selecting or engineering features, training a model, evaluating its performance, and using the trained model to make predictions.
+
+Common evaluation metrics include accuracy, precision, recall, and F1-score. The appropriate metric depends on the type of problem and the consequences of different prediction errors.
+
+Overfitting occurs when a model learns the training data too closely, including noise and patterns that do not generalize to new data. A model that is overfit may perform very well on training data but poorly on unseen data.
+
+Underfitting occurs when a model is too simple to capture important patterns in the data. It can result in poor performance on both training and unseen data.

@@ -1,6 +1,7 @@
 
 from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain_core.prompts import ChatPromptTemplate
+from pydantic import BaseModel
 
 import os
 from dotenv import load_dotenv
@@ -28,21 +29,29 @@ prompt = ChatPromptTemplate.from_template(
 )
 
 
+class QAResponse(BaseModel):
+    answer: str
+    source_found: bool
+
 llm = ChatGoogleGenerativeAI(
     model = "gemini-3.6-flash",
     google_api_key = api_key
 )
 
+structured_llm = llm.with_structured_output(QAResponse)
 
 
-chain = prompt | llm
+chain = prompt | structured_llm
 
 response = chain.invoke({
     "document": document,
     "question": "Who invented the Python programming language?"
 })
 
-print(response.content)
+print(response.answer)
+print(response.source_found)
+
+
 
 
 
